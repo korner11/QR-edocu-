@@ -5,11 +5,10 @@ angular.module('app', [])
     $scope.showForm = false;
     $scope.showHash = true;
     $scope.hash =  $location.path().substring(1,$location.path.toString().length);
-    console.log($scope.hash);
-        //$scope.hash = $window.location.hash.substring(1,$window.location.hash.length);
+    //$scope.hash = $window.location.hash.substring(1,$window.location.hash.length);
     if($scope.hash != ""){
             var getUrl= 'http://localhost:8383/getqr/' + $scope.hash;
-
+            //var getUrl= 'http://localhost:8383/getqr/#' + $scope.hash;
             $scope.getQR= function (){  
                 $http({
                        method: 'GET',
@@ -26,6 +25,7 @@ angular.module('app', [])
     $scope.pairElmnt= function (){
          if($scope.hash != ""){
                 var postUrl= 'http://localhost:8383/pairqr/' + $scope.hash;
+                //var postUrl= 'http://localhost:8383/pairqr/#' + $scope.hash;
                 $http({
                        method: 'POST',
                        url: postUrl,
@@ -59,6 +59,7 @@ angular.module('app', [])
        
         if($scope.hash != ""){
             var postUrl= 'http://localhost:8383/newqr/' + $scope.hash;
+            //var postUrl= 'http://localhost:8383/newqr/#' + $scope.hash;
             if($scope.name != null && $scope.description !=null){
                 $http({
                        method: 'POST',
