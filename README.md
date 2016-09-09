@@ -1,2 +1,2 @@
 # QR-edocu-
-Zadanie pre fitmu edocu
+Zadanie pre firmu edocu
